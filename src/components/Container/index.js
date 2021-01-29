@@ -11,7 +11,6 @@ export default function Container() {
         result: null,
         memory: "0",
     });
-    console.log(state);
 
     function onBtnClickHandler(e) {
         const target = e.target;
