@@ -1,0 +1,241 @@
+
+::-webkit-scrollbar{width:2px;height:2px;}
+::-webkit-scrollbar-button{width:2px;height:2px;}
+.App {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    color: white;
+
+}
+
+.wrapper {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    width: 300px;
+    width: 13%;
+    max-width: 290px;
+    min-width: 290px;
+    position: absolute;
+    height: 70%;
+    min-height: 650px;
+    max-height: 650px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5%;
+    padding: 10px 20px;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.imgWrapper {
+    height: 15px;
+    display: inherit;
+    align-items: center;
+}
+
+.imgWrapper > img {
+    height: 15px;
+}
+
+.container {
+    box-sizing: border-box;
+    /*height: auto;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    box-sizing: border-box;
+    text-align: end;
+    height: 130px;
+    padding: 15px;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    /*align-items: flex-end;*/
+    flex-direction: column;
+}
+
+.mainField {
+    font-size: 50px;
+    height: 65px;
+    white-space:nowrap;
+}
+
+.smallField {
+
+}
+
+.btnWrapper {
+    display: grid;
+    grid-template-areas:
+          "clear module percent division"
+          "mclear mread mminus mplus"
+          "button7 button8 button9 multiplication"
+  "button4 button5 button6 minus"
+  "button1 button2 button3 plus"
+"button0 button0 symbol calc";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.dbl {
+    width: 130px;
+    text-align: start;
+    padding-left: 23px;
+}
+
+button {
+
+    outline: none;
+    border-radius: 100px;
+    height: 57px;
+    width: 57px;
+    font-size: 23px;
+    background: #333333;
+    border: 0px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    box-sizing: border-box;
+    transition: all 0.1s ease-in-out 0s;
+
+}
+button:active {
+    opacity: 0.5;
+}
+.gry {
+    background: #A5A5A5;
+    color: white;
+}
+
+.orng {
+    background: #FE9F06;
+    font-size: 40px;
+    color: white;
+}
+
+.clear {
+    grid-area: clear;
+}
+
+.module {
+    grid-area: module
+}
+
+.percent {
+    grid-area: percent;
+}
+
+.division {
+    grid-area: division;
+}
+
+.mclear {
+    grid-area: mclear;
+}
+
+.mread {
+    grid-area: mread;
+}
+
+.mminus {
+    grid-area: mminus;
+}
+
+.mmplus {
+    grid-area: mmplus;
+}
+
+.button7 {
+    grid-area: button7;
+}
+
+.button8 {
+    grid-area: button8;
+}
+
+.button9 {
+    grid-area: button9;
+}
+
+.multiplication {
+    grid-area: multiplication;
+}
+
+.button4 {
+    grid-area: button4;
+}
+
+.button5 {
+    grid-area: button5;
+}
+
+.button6 {
+    grid-area: button6;
+}
+
+.minus {
+    grid-area: minus;
+}
+
+.button1 {
+    grid-area: button1;
+}
+
+.button2 {
+    grid-area: button2;
+}
+
+.button3 {
+    grid-area: button3;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+
+.button0 {
+    grid-area: button0;
+}
+
+.symbol {
+    grid-area: symbol;
+}
+
+.calc {
+    grid-area: calc;
+}
+.footer {
+    text-align: center;
+    min-height: 4px;
+    width: 40%;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
