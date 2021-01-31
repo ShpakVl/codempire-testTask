@@ -63,13 +63,16 @@ const functions = {
         return {currentNumber: memory}
     },
     minus: function ({currentNumber, memory, operator, prevNumber}) {
+        console.log(currentNumber, "curr")
         if (operator !== null) {
-            const expression = {prevNumber: prevNumber, currentNumber: currentNumber, operator: operator}
+            const expression = {prevNumber: prevNumber, currentNumber: `(${currentNumber})`, operator: operator}
             const calculate = this.calculate(expression);
+            console.log(calculate)
             const minus = this.calculate({prevNumber: memory, currentNumber: calculate.currentNumber, operator: "-"});
             return {currentNumber: "0", prevNumber: null, memory: minus.currentNumber, operator: null}
         }
-        const expression = {prevNumber: memory, currentNumber: currentNumber, operator: "-"}
+        const expression = {prevNumber: memory, currentNumber:`(${currentNumber})`, operator: "-"}
+        console.log({currentNumber, memory, operator, prevNumber})
         const calculate = this.calculate(expression)
         return {currentNumber: "0", prevNumber: null, memory: calculate.currentNumber};
     },
@@ -78,12 +81,12 @@ const functions = {
             if (operator !== null) {
                 const expression = {prevNumber: prevNumber, currentNumber: currentNumber, operator: operator}
                 const calculate = this.calculate(expression);
-                const minus = this.calculate({
+                const plus = this.calculate({
                     prevNumber: memory,
                     currentNumber: calculate.currentNumber,
-                    operator: "-"
+                    operator: "+"
                 });
-                return {currentNumber: "0", prevNumber: null, memory: minus.currentNumber, operator: null}
+                return {currentNumber: "0", prevNumber: null, memory: plus.currentNumber, operator: null}
             }
             const expression = {prevNumber: memory, currentNumber: currentNumber, operator: "+"}
             const calculate = this.calculate(expression)
@@ -103,16 +106,20 @@ const functions = {
         let string;
         if (expression.prevNumber === null) {
             string = expression.currentNumber;
+            console.log(string);
             try {
                 let result = eval(string.replace(/,/, "."));
+                console.log(result);
                 return {operator: null};
             } catch (e) {
                 return {operator: null}
             }
         } else {
-            string = expression.prevNumber + expression.operator + expression.currentNumber
+            string = expression.prevNumber + expression.operator + `(${expression.currentNumber})`;
+            console.log(string);
             try {
                 let result = Math.round(eval(string.split(",").join(".")) * 10000000) / 10000000;
+                console.log(result);
                 return {
                     currentNumber: result.toString().split(".").join(","),
                     operator: null,
