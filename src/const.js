@@ -54,7 +54,10 @@ const functions = {
 
     },
     delete: function ({memory}) {
-        return this.clear();
+         return {
+            currentNumber: "0",
+            memory:"0"
+        }
     },
     read: function ({memory, currentNumber}) {
         return {currentNumber: memory}
