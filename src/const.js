@@ -33,8 +33,7 @@ const functions = {
             currentNumber: "0",
             operator: null,
             prevNumber: null,
-            result: null,
-            memory:"0"
+            result: null
         }
     },
     module: function ({currentNumber}) {
